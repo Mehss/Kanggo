@@ -1,0 +1,39 @@
+{
+  "name": "kanggo",
+  "jest": {
+    "globalSetup": "./scripts/jestGlobalSetup.js"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jest": "^27.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5",
+    "supertest": "^6.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "setup:dev": "sequelize-cli db:drop&&sequelize-cli db:create&&sequelize-cli db:migrate ",
+    "setup:test": "set NODE_ENV=test&& sequelize-cli db:drop&&sequelize-cli db:create && sequelize-cli db:migrate",
+    "test": "set NODE_ENV=test&&sequelize-cli db:drop&&sequelize-cli db:create && sequelize-cli db:migrate&&jest --runInBand --forceExit --detectOpenHandles --coverage",
+    "dev": "set NODE_ENV=development&&nodemon ./bin/server.js",
+    "start": "set NODE_ENV=production&&node ./bin/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mehss/Kanggo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mehss/Kanggo/issues"
+  },
+  "homepage": "https://github.com/Mehss/Kanggo#readme"
+}
